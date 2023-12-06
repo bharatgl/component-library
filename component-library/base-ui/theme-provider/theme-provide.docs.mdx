@@ -1,0 +1,22 @@
+---
+description: A generic theme provider
+---
+
+import { ThemeProvider } from './theme-provider';
+import styles from './docs/purple.module.scss';
+
+Use the theme provider to compose brand-specific themes.
+
+#### Using the theme provider
+
+```jsx live
+// import styles from './purple.module.scss';
+
+() => {
+  return (
+    <ThemeProvider className={styles.purple}>
+      <p style={{ color: 'var(--primary-color)' }}>This is a styled element </p>
+    </ThemeProvider>
+  );
+};
+```

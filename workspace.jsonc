@@ -1,0 +1,102 @@
+/**
+ * this is the main configuration file of your bit workspace.
+ * for full documentation, please see: https://bit.dev/reference/workspace/workspace-json
+ **/{
+  "$schema": "https://static.bit.dev/teambit/schemas/schema.json",
+  /**
+   * main configuration of the Bit workspace.
+   **/
+  "teambit.workspace/workspace": {
+    /**
+     * the name of the component workspace. used for development purposes.
+     **/
+    "name": "component-library",
+    /**
+     * set the icon to be shown on the Bit server.
+     **/
+    "icon": "https://static.bit.dev/bit-logo.svg",
+    /**
+     * default directory to place a component during `bit import` and `bit create`.
+     * the following placeholders are available:
+     * name - component name includes namespace, e.g. 'ui/button'.
+     * scopeId - full scope-id includes the owner, e.g. 'teambit.compilation'.
+     * scope - scope name only, e.g. 'compilation'.
+     * owner - owner name in bit.dev, e.g. 'teambit'.
+     **/
+    "defaultDirectory": "{scope}/{name}",
+    /**
+     * default scope for all components in workspace.
+     **/
+    "defaultScope": "bharatgl.component-library",
+    "resolveAspectsFromNodeModules": true,
+    "resolveEnvsFromRoots": true,
+    "extensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "scss"
+    ]
+  },
+  /**
+   * comment in to include generator templates in your workspace.
+   * browse more dev environments: https://bit.dev/docs/getting-started/composing/dev-environments
+   **/
+  // "teambit.generator/generator": {
+  //   "envs": [
+  //     "teambit.node/node",
+  //     "bitdev.react/react-env",
+  //     "bitdev.vue/vue-env",
+  //     "bitdev.angular/angular-env"
+  //   ]
+  // },
+  /**
+   * main configuration for component dependency resolution.
+   **/
+  "teambit.dependencies/dependency-resolver": {
+    /**
+     * choose the package manager for Bit to use. you can choose between 'yarn', 'pnpm'
+     */
+    "packageManager": "teambit.dependencies/pnpm",
+    "policy": {
+      "dependencies": {
+        "@teambit/base-react.theme.theme-provider": "^1.96.6",
+        "@teambit/code.ui.object-formatter": "^0.0.1",
+        "@teambit/defender.eslint-linter": "1.0.15",
+        "@teambit/defender.jest-tester": "1.0.12",
+        "@teambit/defender.prettier-formatter": "1.0.7",
+        "@teambit/dependencies.modules.packages-excluder": "1.0.8",
+        "@teambit/documenter.theme.theme-context": "^4.0.7",
+        "@teambit/envs.docs.env-overview-template": "0.0.2",
+        "@teambit/mdx.ui.mdx-scope-context": "1.0.0",
+        "@teambit/preview.react-preview": "1.0.23",
+        "@teambit/react.mounter": "1.0.3",
+        "@teambit/react.react-env": "1.0.32",
+        "@teambit/typescript.typescript-compiler": "2.0.13",
+        "@testing-library/react": "^14.1.2",
+        "@testing-library/react-hooks": "^8.0.1",
+        "classnames": "^2.3.2",
+        "eslint": "^7.28.0",
+        "lodash": "^4.17.21",
+        "lodash.sample": "^4.2.1",
+        "react-collapsable": "^1.0.4",
+        "react-collapsible": "^2.10.0",
+        "react-create-ref": "^1.0.1",
+        "react-tooltip": "^5.25.0",
+        "reset-css": "^5.0.2",
+        "uuid": "^9.0.1"
+      },
+      "peerDependencies": {}
+    },
+    "linkCoreAspects": true,
+    "rootComponents": true
+  },
+  "teambit.workspace/workspace-config-files": {
+    "enableWorkspaceConfigWrite": true
+  },
+  "teambit.generator/generator": {
+    "envs": [
+      "bharatgl.component-library/envs/my-react-env"
+    ]
+  }
+}

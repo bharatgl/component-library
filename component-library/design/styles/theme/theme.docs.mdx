@@ -1,0 +1,51 @@
+---
+description: Applies shared styles to all child components.
+---
+
+import { Theme } from './theme';
+import { CheckBox } from '@bharatgl/component-library.design.check-box';
+import { darkMode } from '@bharatgl/component-library.design.styles.colors.dark-color-palette';
+import { Button } from '@bharatgl/component-library.design.button';
+
+Applied styling includes:
+
+- Colors
+- Headers and paragraphs font-size, margins, etc
+- Brand font
+- Shadows
+- Specific brand related styles
+
+#### Using the theme provider
+
+```jsx live
+// import { Theme } from './theme-provider';
+// import { Checkbox } from '@bharatgl/component-library.design.check-box';
+
+() => {
+  return (
+    <Theme>
+      <Button importance="ghost" style={{ width: 120 }}>
+        Update
+      </Button>
+    </Theme>
+  );
+};
+```
+
+#### Using the theme provider in 'dark mode'
+
+```jsx live
+// import { Theme } from './theme-provider';
+// import { Button } from '@bharatgl/component-library.design.button';
+// import { darkMode } from '@bharatgl/component-library.design.styles.colors.dark-color-palette';
+
+() => {
+  return (
+    <Theme className={darkMode}>
+      <Button importance="ghost" style={{ width: 120 }}>
+        Update
+      </Button>
+    </Theme>
+  );
+};
+```
